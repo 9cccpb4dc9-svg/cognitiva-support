@@ -1,0 +1,48 @@
+name: Support request
+description: Ask for help without posting personal health or contact information.
+title: "Support: "
+labels:
+  - support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        GitHub issues are public. Do not include health records, medications, journal text, contact information, exact location, account details, or screenshots containing private data.
+  - type: dropdown
+    id: feature
+    attributes:
+      label: Feature
+      options:
+        - Journal
+        - Medications
+        - Reminders
+        - Calendar
+        - Health
+        - Family Feed
+        - Forums
+        - Settings
+        - Export
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem without personal information.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: Example: 1.0 (7)
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I confirmed this report contains no private health, contact, account, or location information.
+          required: true
