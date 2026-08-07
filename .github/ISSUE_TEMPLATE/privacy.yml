@@ -1,0 +1,36 @@
+name: Privacy request
+description: Ask a privacy question without posting personal information.
+title: "Privacy: "
+labels:
+  - privacy
+body:
+  - type: markdown
+    attributes:
+      value: |
+        GitHub issues are public. Do not include health records, medications, journal text, names, contact information, exact location, account details, or screenshots containing private data. Use the in-app Report action for a specific public community post.
+  - type: dropdown
+    id: request
+    attributes:
+      label: Request type
+      options:
+        - Privacy question
+        - Public community content removal question
+        - Permission question
+        - Data storage question
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Describe the request without identifying a person or sharing private information.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I confirmed this public request contains no private health, contact, account, or location information.
+          required: true

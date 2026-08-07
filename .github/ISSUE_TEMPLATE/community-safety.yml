@@ -1,0 +1,35 @@
+name: Community safety question
+description: Ask about community rules or a moderation decision.
+title: "Community safety: "
+labels:
+  - community-safety
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a specific post, topic, or reply, use Report inside Cognitiva. GitHub issues are public. Do not copy the reported content or include medical, contact, account, or location information here.
+  - type: dropdown
+    id: question_type
+    attributes:
+      label: Question type
+      options:
+        - Community Guidelines
+        - Reporting or blocking
+        - Moderation decision
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Describe the question without quoting private or harmful content.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I confirmed this public request contains no private health, contact, account, or location information.
+          required: true
